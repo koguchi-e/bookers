@@ -1,17 +1,51 @@
+<!DOCTYPE html>
 <html>
-    <head>
-        <title>WebCampBackendNew</title>
-    </head>
-    <body>
-        <h1>ようこそ <strong>Bookers</strong> へ！</h1>
-        <p>
-            <strong>Bookers</strong> では、さまざまな書籍に関するあなたの意見や
-        </p>
-        <p>
-            印象を共有し交流することができます
-        </p>
-        <p>
-            <a href="/books">start</a>
-        </p>
-    </body>
+<head>
+    <title>Books</title>
+</head>
+<body>
+
+<h1>Books</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Body</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @books.each do |item| %>
+        <tr>
+            <td><%= item.title %></td>
+            <td><%= item.body %></td>
+            <td>
+                <%= link_to "Show", book_path(item.id) %>
+                <%= link_to "Edit", edit_book_path(item.id) %>
+                <%= link_to "Destroy", book_path(item.id), method: :delete, data: { confirm: "Are you sure?", turbolinks: false } %>
+            </td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
+
+<h2>New Book</h2>
+<%= form_with model: Book.new, local: true do |f| %>
+
+    <div class="field">
+        <label for="book_title">Title</label><br>
+        <%= f.text_field :title, id: "book_title" %>
+    </div>
+
+    <div class="field">
+        <label for="book_body">Body</label><br>
+        <%= f.text_area :body, id: "book_body" %>
+    </div>
+
+    <div class="actions">
+        <%= f.submit "Create Book" %>
+    </div>
+<% end %>
+
+</body>
 </html>

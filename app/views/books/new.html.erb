@@ -1,26 +1,37 @@
-<h1>Books</h1>
-<tabel>
+<% if @book.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@book.errors.count, "error") %> prohibited this book from being saved:</h2>
+    <ul>
+      <% @book.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<% if @books.present? %>
+  <table>
     <tr>
-        <td><b>Title</b></td>
-        <td><b>Body</b></td>
-        <td></td>
+      <td><b>Title</b></td>
+      <td><b>Body</b></td>
+      <td></td>
     </tr>
-    <tr>
-        <% @books.each do |book| %>
-            <td><%= book.title %></td>
-            <td><%= book.body %></td>
-            <td>
-                <%= link_to "Show", book_path(book.id) %>
-                <%= link_to "Edit", edit_book_path(@book.id) %>
-                <%= link_to "Destroy", destroy_book_path(@book.id) method: :delete, "data-confirm" => "Are you sure?" %>
-            </td>
-        <% end %>
-    </tr>
-</tabel>
+    <% @books.each do |item| %>
+      <tr>
+        <td><%= item.title %></td>
+        <td><%= item.body %></td>
+        <td>
+          <%= link_to "Show", book_path(item.id) %>
+          <%= link_to "Edit", edit_book_path(item.id) %>
+          <%= link_to "Destroy", book_path(item.id), method: :delete, data: { confirm: "Are you sure?" } %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>
 
 <h2>New book</h2>
 <%= form_with model: Book.new do |f| %>
-
     <h4>Title</h4>
     <%= f.text_field :title %>
 
