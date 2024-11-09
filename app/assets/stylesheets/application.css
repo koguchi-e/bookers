@@ -13,6 +13,46 @@
  *= require_tree .
  *= require_self
  */
+
+ body {
+  padding: 20px;
+  box-sizing: border-box;
+ }
+
+ h1 {
+  margin-bottom: 0px; /* 必要に応じて変更 */
+}
+
+form {
+  margin-top: 0; /* 追加してフォーム上部の余白を取り除く */
+  padding-top: 0; /* 必要に応じて調整 */
+}
+
+
+.field{
+  font-size: 15px;
+  color: black;
+ }
+
+ .link a {
+  color: black; /* 通常のリンクカラー */
+  display: inline-block; /* インライン表示 */
+  margin-right: 10px; /* 各リンクの間にスペースを追加 */
+}
+
+ .link a:visited {
+  color: gray;
+ }
+
+ .link a:hover {
+  color: white; /* 文字を白に */
+  background-color: black; /* 背景を黒に */
+  padding: 4px 8px; /* 四角のサイズを調整 */
+ }
+
+ .content {
+  margin-left: 40px; /* "ようこそ" より右に20px移動 */
+}
  
  .flash-message {
   border-radius: 5px;
