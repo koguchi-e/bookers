@@ -1,14 +1,8 @@
-<<<<<<< HEAD
 <h2>New Book</h2>
 
 <% if @book.errors.any? %>
   <div class="error-messages">
     <h3><%= @book.errors.count %> errors prohibited this book from being saved:</h3>
-=======
-<% if @book.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(@book.errors.count, "error") %> prohibited this book from being saved:</h2>
->>>>>>> 9254917476d2a73873e91a2f68fd644b4a2ffc8a
     <ul>
       <% @book.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -17,7 +11,6 @@
   </div>
 <% end %>
 
-<<<<<<< HEAD
 <%= form_with model: @book, local: true do |f| %>
   <div class="field">
     <label for="book_title">Title</label><br>
@@ -32,36 +25,4 @@
   <div class="actions">
     <%= f.submit "Create Book" %>
   </div>
-=======
-<% if @books.present? %>
-  <table>
-    <tr>
-      <td><b>Title</b></td>
-      <td><b>Body</b></td>
-      <td></td>
-    </tr>
-    <% @books.each do |item| %>
-      <tr>
-        <td><%= item.title %></td>
-        <td><%= item.body %></td>
-        <td>
-          <%= link_to "Show", book_path(item.id) %>
-          <%= link_to "Edit", edit_book_path(item.id) %>
-          <%= link_to "Destroy", book_path(item.id), method: :delete, data: { confirm: "Are you sure?" } %>
-        </td>
-      </tr>
-    <% end %>
-  </table>
-<% end %>
-
-<h2>New book</h2>
-<%= form_with model: Book.new do |f| %>
-    <h4>Title</h4>
-    <%= f.text_field :title %>
-
-    <h4>Body</h4>
-    <%= f.text_area :body %>
-
-    <%= f.submit "Create Book" %>
->>>>>>> 9254917476d2a73873e91a2f68fd644b4a2ffc8a
 <% end %>
