@@ -58,6 +58,7 @@ td {
   color: black; /* 通常のリンクカラー */
   display: inline-block; /* インライン表示 */
   margin-right: 10px; /* 各リンクの間にスペースを追加 */
+  padding: 4px 8px; /* 通常時にもパディングを追加 */
 }
 
  .link a:visited {
@@ -132,17 +133,15 @@ td {
 }
 
 /* エラーがある時、入力欄とタイト赤で囲む */
-/* label の背景を赤くし、黒文字で表示 */
 .field_with_errors {
-  background-color: red; /* ラベルの背景を赤く */
-  color: black; /* ラベルの文字を黒に */
+  background-color: red;
+  color: black; /* 文字を黒に */
   display: inline-block; /* サイズを内容に合わせる */
   padding: 2px; /* ラベル内側の余白 */
   box-sizing: border-box;
   margin: 0; /* 余白をなくしてラベルと入力欄の距離を一定に保つ */
 }
 
-/* input, textarea は赤い枠のみ、背景は白 */
 input.field_with_errors,
 textarea.field_with_errors {
   border: 1px solid black; /* 入力欄の枠線を黒に戻す */
