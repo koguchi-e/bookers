@@ -45,17 +45,18 @@
 <% end %>
 
 <%= form_with model: @book, local: true do |f| %>
-  <div class="field">
-    <label for="book_title">Title</label><br>
-    <%= f.text_field :title, id: "book_title" %>
-  </div>
 
-  <div class="field">
-    <label for="book_body">Body</label><br>
-    <%= f.text_area :body, id: "book_body" %>
-  </div>
+<div class="field">
+  <%= f.label :title, class: @book.errors[:title].any? ? 'field_with_errors' : '' %><br>
+  <%= f.text_field :title, class: @book.errors[:title].any? ? 'field_with_errors' : '' %><br>
+</div>
 
-  <div class="actions">
+<div class="field"style="margin-top: 5px;">
+  <%= f.label :body, class: @book.errors[:body].any? ? 'field_with_errors' : '' %><br>
+  <%= f.text_area :body, class: @book.errors[:body].any? ? 'field_with_errors' : '' %><br>
+</div>
+
+  <div class="actions"style="margin-top: 5px;">
     <%= f.submit "Create Book" %>
   </div>
 <% end %>

@@ -132,25 +132,21 @@ td {
 }
 
 /* エラーがある時、入力欄とタイト赤で囲む */
-/* label の背景を赤くし、黒文字で表示 */
-.field_with_errors {
-  background-color: red; /* ラベルの背景を赤く */
-  color: black; /* ラベルの文字を黒に */
-  display: inline-block; /* サイズを内容に合わせる */
-  padding: 2px; /* ラベル内側の余白 */
+.field_with_errors input,
+.field_with_errors textarea {
+  box-shadow: 0 0 0 3px red; /* 外側に赤い枠を追加 */
+  border: 1px solid black; /* 元の黒い枠線を保持 */
+  box-sizing: border-box; /* 境界線を含めてサイズ調整 */
+  margin-bottom: 10px; /* 入力欄と適度に距離をとる */
+}
+
+.field_with_errors label {
+  background-color: red;
+  border: 2px solid red; /* ラベルの外側に赤い枠線を追加 */
+  display: inline-block; /* ラベルを入力欄と揃えるためインラインブロックに */
+  box-shadow: 0 0 0 3px red; /* 外側に赤い枠を追加 */
   box-sizing: border-box;
-  margin: 0; /* 余白をなくしてラベルと入力欄の距離を一定に保つ */
 }
-
-/* input, textarea は赤い枠のみ、背景は白 */
-input.field_with_errors,
-textarea.field_with_errors {
-  border: 1px solid black; /* 入力欄の枠線を黒に戻す */
-  box-shadow: 0 0 0 1px red; /* 外側に赤い枠 */
-  background-color: white; /* 入力欄の背景色を白のまま */
-  box-shadow: none; /* 追加の影を消去 */
-}
-
 
 /*##########################*/
 
