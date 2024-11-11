@@ -39,16 +39,17 @@ class BooksController < ApplicationController
         flash[:notice] = "Book was successfully updated."
         redirect_to book_path(@book.id)
     else
-        flash.now[:alert] = "errors prohibited this book from being saved:"
         render :edit
     end
   end
 
   # 削除機能
   def destroy
-    book = Book.find(params[:id])
-    book.destroy
-    redirect_to "/books"
+    @book = Book.find(params[:id])
+    if @book.destroy
+      flash[:notice] = "Book was successfully destroyed."
+      redirect_to books_path
+    end
   end
 
   private
