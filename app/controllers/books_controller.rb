@@ -1,5 +1,9 @@
 class BooksController < ApplicationController
+<<<<<<< HEAD
   # 新規作成
+=======
+  # 新規作成 
+>>>>>>> 9254917476d2a73873e91a2f68fd644b4a2ffc8a
   def new
     @books = Book.new
   end
@@ -8,6 +12,7 @@ class BooksController < ApplicationController
   def index
     # すべての本のデータを取得
     @books = Book.all
+<<<<<<< HEAD
     @book = Book.new
   end
 
@@ -20,6 +25,22 @@ class BooksController < ApplicationController
       redirect_to book_path(@book.id)
     else
       render :new
+=======
+  end
+
+  def create
+    # データを受け取り新規登録するためのインスタンス作成
+    @book = Book.new(book_params)
+    @books = Book.all
+    # データをデータベースに保存するためのsaveメソッド実行
+    if @book.save
+        flash[:notice] = "Book was successfully created."
+        redirect_to book_path(@book.id)
+    else
+        flash.now[:alert] = @book.errors.full_messages.join(", ") 
+        # flash.now[:notice] = "errors prohibited this book from being saved:"
+        render :new
+>>>>>>> 9254917476d2a73873e91a2f68fd644b4a2ffc8a
     end
   end
 

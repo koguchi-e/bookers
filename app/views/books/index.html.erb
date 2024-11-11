@@ -29,6 +29,7 @@
 </table>
 
 <h2>New Book</h2>
+<<<<<<< HEAD
 
 <%= form_with model: @book, local: true do |f| %>
   <div class="field">
@@ -44,6 +45,23 @@
   <div class="actions">
     <%= f.submit "Create Book" %>
   </div>
+=======
+<%= form_with model: Book.new, local: true do |f| %>
+
+    <div class="field">
+        <label for="book_title">Title</label><br>
+        <%= f.text_field :title, id: "book_title" %>
+    </div>
+
+    <div class="field">
+        <label for="book_body">Body</label><br>
+        <%= f.text_area :body, id: "book_body" %>
+    </div>
+
+    <div class="actions">
+        <%= f.submit "Create Book" %>
+    </div>
+>>>>>>> 9254917476d2a73873e91a2f68fd644b4a2ffc8a
 <% end %>
 
 </body>

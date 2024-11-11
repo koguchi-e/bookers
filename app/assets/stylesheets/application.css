@@ -14,6 +14,7 @@
  *= require_self
  */
 
+<<<<<<< HEAD
 body {
   padding: 20px;
   box-sizing: border-box;
@@ -22,6 +23,14 @@ body {
 }
 
 h1 {
+=======
+ body {
+  padding: 20px;
+  box-sizing: border-box;
+ }
+
+ h1 {
+>>>>>>> 9254917476d2a73873e91a2f68fd644b4a2ffc8a
   margin-bottom: 0px; /* 必要に応じて変更 */
 }
 
@@ -30,6 +39,7 @@ form {
   padding-top: 0; /* 必要に応じて調整 */
 }
 
+<<<<<<< HEAD
 .content {
   margin-left: 40px; /* "ようこそ" より右に20px移動 */
 }
@@ -45,6 +55,35 @@ td {
 }
 
 .flash-message {
+=======
+
+.field{
+  font-size: 15px;
+  color: black;
+ }
+
+ .link a {
+  color: black; /* 通常のリンクカラー */
+  display: inline-block; /* インライン表示 */
+  margin-right: 10px; /* 各リンクの間にスペースを追加 */
+}
+
+ .link a:visited {
+  color: gray;
+ }
+
+ .link a:hover {
+  color: white; /* 文字を白に */
+  background-color: black; /* 背景を黒に */
+  padding: 4px 8px; /* 四角のサイズを調整 */
+ }
+
+ .content {
+  margin-left: 40px; /* "ようこそ" より右に20px移動 */
+}
+ 
+ .flash-message {
+>>>>>>> 9254917476d2a73873e91a2f68fd644b4a2ffc8a
   border-radius: 5px;
   padding: 16px 24px;
   margin: 16px 0px;
@@ -59,6 +98,7 @@ td {
 .flash-message.alert {
   background-color: red;
   color: white;
+<<<<<<< HEAD
   border: solid 1px red;
 }
 
@@ -103,3 +143,7 @@ td {
   background-color: black;
   padding: 4px 8px;
 }
+=======
+  border: solid 1pz red;
+}
+>>>>>>> 9254917476d2a73873e91a2f68fd644b4a2ffc8a

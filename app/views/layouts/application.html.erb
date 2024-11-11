@@ -13,9 +13,15 @@
   <body>
     <main>
       <% flash.each do |message_type, message| %>
+<<<<<<< HEAD
         <div class="flash-message <%= message_type %>">
           <%= message %>
         </div>
+=======
+          <div class="flash-message <%= message_type %>">
+              <%= message %>
+          </div>
+>>>>>>> 9254917476d2a73873e91a2f68fd644b4a2ffc8a
       <% end %>
       <%= yield %>
     </main>
