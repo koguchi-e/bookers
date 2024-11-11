@@ -22,7 +22,6 @@ body {
 }
 
 h1 {
-  body {
   padding: 20px;
   box-sizing: border-box;
  }
@@ -75,6 +74,8 @@ td {
   margin-left: 40px; /* "ようこそ" より右に20px移動 */
 }
 
+/*##########################*/
+
  .flash-message {
   border-radius: 5px;
   padding: 16px 24px;
@@ -93,30 +94,44 @@ td {
   border: solid 1px red;
 }
 
+/*##########################*/
+
 /* エラー表示エリアのスタイル */
 .error-messages {
-  padding: 10px;
+  padding: 0; /* 内側の余白を初期化 */
   margin: 15px 0;
-  background-color: #f8d7da; /* 薄い赤色背景 */
-  border: 1px solid #f5c6cb; /* 赤色の境界線 */
-  color: #721c24; /* 文字色 */
-  border-radius: 5px;
+  border: 2px solid red; /* 赤い境界線 */
+  box-sizing: border-box; /* 境界線込みでサイズを設定 */
+  width: 500px;
 }
 
 .error-messages h3 {
   margin: 0;
   font-size: 14px;
+  padding: 10px; /* 余白を追加 */
+  background-color: #c00; /* 赤背景*/
+  font-weight: bold; /* 太文字*/
+  color: #fff; /* 白文字 */
 }
 
 .error-messages ul {
   margin: 0;
-  padding-left: 20px;
+  padding: 10px 20px; /* 余白を追加し、左に20pxのインデント */
+  background-color: #f0f0f0; /* 項目の背景色 */
+  list-style: none; /* マーカーを削除 */
+  padding-top: 30px;
+  padding-left: 90px;
+  padding-bottom: 30px;
 }
 
 .error-messages li {
-  font-size: 12px;
+  font-size: 13px;
   list-style: square;
+  color: #000; /* 黒文字 */
+  padding-top: 5px;
 }
+
+/*##########################*/
 
 /* リンクのホバー時のカラー変更 */
 .link a {
