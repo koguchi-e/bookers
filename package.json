@@ -14,10 +14,7 @@
   "version": "0.1.0",
   "devDependencies": {
     "@babel/core": "^7.26.0",
-<<<<<<< HEAD
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-=======
->>>>>>> 9254917476d2a73873e91a2f68fd644b4a2ffc8a
     "@babel/preset-env": "^7.26.0",
     "webpack-dev-server": "^3"
   }
