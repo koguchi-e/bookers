@@ -4,14 +4,6 @@ class BooksController < ApplicationController
     @books = Book.new
   end
 
-  # 一覧画面表示
-  def index
-    # すべての本のデータを取得
-    @books = Book.all
-    @book = Book.new
-  end
-
-  # 新規作成
   def create
     @book = Book.new(book_params)
     @books = Book.all
@@ -21,6 +13,13 @@ class BooksController < ApplicationController
     else
       render :index
     end
+  end
+
+  # 一覧画面表示
+  def index
+    # すべての本のデータを取得
+    @books = Book.all
+    @book = Book.new
   end
 
   # 詳細画面
